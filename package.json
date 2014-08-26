@@ -1,0 +1,32 @@
+{
+  "name": "superagent-cli",
+  "version": "0.0.1",
+  "description": "A cli wrapper for super agent",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toastynerd/superagent-cli"
+  },
+  "keywords": [
+    "superagent",
+    "rest",
+    "cli"
+  ],
+  "author": "Tyler Morgan <tyler@codefellows.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toastynerd/superagent-cli/issues"
+  },
+  "homepage": "https://github.com/toastynerd/superagent-cli",
+  "dependencies": {
+    "superagent": "^0.18.2"
+  },
+  "devDependencies": {
+    "app-root-path": "^0.1.0",
+    "chai": "^1.9.1",
+    "sinon": "^1.10.3"
+  }
+}

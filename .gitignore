@@ -1,0 +1,3 @@
+test/automocha
+node_modules/
+**/*.sw?
