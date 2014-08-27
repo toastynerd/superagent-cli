@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+var parser = require('../lib/parser');
+var callbackChooser = require('../lib/callbacks');
+var sacli = require('../lib/superagent-cli');
+
+var input = process.argv.slice(2);
+var request = parser.parse(input);
+if (request.help) {
+  console.log('use of sa: ');
+  console.log('superagent <url> <rest method(defaults to get)> <json data if needed>');
+  console.log('examples:');
+  console.log('superagent www.google.com');
+  console.log('superagent www.google.com get');
+  console.log('superagent localhost:3000 post \'{"hello":"world"}\'');
+  console.log('flags: ');
+  console.log('-d or --detail display all information from response');
+  console.log('-h or --help display this message');
+  return;
+}
+var callback = callbackChooser(request);
+sacli(request, callback);

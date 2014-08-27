@@ -1,6 +1,6 @@
 {
   "name": "superagent-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A cli wrapper for super agent",
   "main": "index.js",
   "scripts": {
@@ -16,9 +16,17 @@
     "cli"
   ],
   "author": "Tyler Morgan <tyler@codefellows.org>",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/toastynerd/automocha/master/LICENSE"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/toastynerd/superagent-cli/issues"
+  },
+  "bin": {
+    "superagent": "./bin/superagent" 
   },
   "homepage": "https://github.com/toastynerd/superagent-cli",
   "dependencies": {
