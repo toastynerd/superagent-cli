@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+var parser = require('../lib/parser');
+var callbackChooser = require('../lib/callbacks');
+var sacli = require('../lib/superagent-cli');
+
+var input = process.argv.slice(2);
+var request = parser.parse(input);
+var callback = callbackChooser(request);
+sacli(request, callback);
