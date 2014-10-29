@@ -2,7 +2,7 @@ Super Agent CLI
 ==================
 <img src="https://travis-ci.org/toastynerd/superagent-cli.svg" alt="Travis CI Badge"></img>
 
-A CLI interface for the <a href="https://github.com/visionmedia/superagent">superagent rest library</a>. 
+A CLI for the <a href="https://github.com/visionmedia/superagent">superagent rest library</a>. 
 Designed to make testing JSON apis from the command line easier.
 
 to install:
