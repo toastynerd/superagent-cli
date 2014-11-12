@@ -15,6 +15,7 @@ if (request.help) {
   console.log('flags: ');
   console.log('-d, -v or --detail, --verbose display all information from response');
   console.log('-h or --help display this message');
+  console.log('-u username:password for basic http authentication');
   return;
 }
 var callback = callbackChooser(request);
