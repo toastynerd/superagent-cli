@@ -20,6 +20,13 @@ describe('parser', function() {
     expect(result.data.hello).to.eql('world');
   });
 
+  it('should parse object literals, not just strict json', function() {
+    var args = ['http://google.com', 'post', {hello: 'world'}];
+    var result = parser.parse(args);
+    expect(result.data).to.be.ok;
+    expect(result.data.hello).to.eql('world');
+  });
+
   it('should be able to get help', function() {
     var result = parser.parse(['-h']);
     expect(result['help']).to.be.true;
