@@ -12,8 +12,10 @@ npm install -g superagent-cli
 
 the super agent cli command is `superagent` and requests look like the following:
 ```
+superagent or superageng -h to display help
 superagent <url> <rest method(get|post|put|patch|delete)> <json data>
 superagent www.google.com
 superagent www.google.com get
 superagent localhost:3000 post '{"hello":"world"}'
+superagent localhost:3000 post {hello: 'world'}
 ```
