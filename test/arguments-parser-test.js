@@ -21,7 +21,7 @@ describe('parser', function() {
   });
 
   it('should parse object literals, not just strict json', function() {
-    var args = ['http://google.com', 'post', {hello: 'world'}];
+    var args = ['http://google.com', 'post', '{hello:', 'world}']; //command line args of {hello: 'world'}
     var result = parser.parse(args);
     expect(result.data).to.be.ok;
     expect(result.data.hello).to.eql('world');
