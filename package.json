@@ -1,6 +1,6 @@
 {
   "name": "superagent-cli",
-  "version": "1.3.2",
+  "version": "1.4.2",
   "description": "A cli wrapper for super agent",
   "main": "index.js",
   "scripts": {
