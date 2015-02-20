@@ -50,4 +50,11 @@ describe('parser', function() {
     expect(result.data.hello).to.eql('world');
     expect(result['detail']).to.be.true;
   });
+
+  it('should be able to send properties with periods in them', function() {
+    var args = ['http://google.com', 'post', '{hello: ', '"world.com"}'];
+    var result = parser.parse(args);
+    expect(result.data).to.be.ok;
+    expect(result.data.hello).to.eql('world.com');
+  });
 });
