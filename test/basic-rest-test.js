@@ -44,7 +44,7 @@ describe('basic rest requests', function() {
     });
   });
 
-  it('should be able to make a patch reques', function(done) {
+  it('should be able to make a patch request', function(done) {
     var request = {
       hostname: 'http://localhost:3000',
       method: 'patch',
