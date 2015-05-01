@@ -18,6 +18,7 @@ if (request.help) {
   console.log('-h or --help display this message');
   console.log('-u username:password for basic http authentication');
   console.log('-t miliseconds to set a specific timeout');
+  console.log('-f <filename> to specify a file that contains the request body');
   return;
 }
 var callback = callbackChooser(request);
