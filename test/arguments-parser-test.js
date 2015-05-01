@@ -1,5 +1,6 @@
 var rootPath = require('app-root-path');
 var chai = require('chai');
+var fs = require('fs');
 var expect = chai.expect;
 var parser = require(rootPath + '/lib/parser');
 
@@ -63,5 +64,29 @@ describe('parser', function() {
     var result = parser.parse(args);
     expect(result.data).to.be.ok;
     expect(result.data.hello).to.eql('this is dog');
+  });
+
+  before(function (done) {
+    var bodyObj = {};
+    bodyObj.textKey = "This is some text";
+    bodyObj.urlKey = "http://www.example.com/test";
+    bodyObj.emailKey = "example@example.com";
+    var bodyJson = JSON.stringify(bodyObj);
+    fs.writeFile('test_file.json', bodyJson, function(err) {
+      if (err) return console.log(err);
+    });
+    done();
+  });
+
+  it('should be able to read json data from a file with a post request', function() {
+    var args = ['http://google.com', 'post','--detail', '-f','test_file.json'];
+    var result = parser.parse(args);
+    expect(result.data.emailKey).to.eql('example@example.com');
+    expect(result['detail']).to.be.true;
+  });
+
+  after(function(done) {
+    fs.unlink('test_file.json');
+    done();
   });
 });

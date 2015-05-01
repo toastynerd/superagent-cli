@@ -25,3 +25,7 @@ with -u username:password
 ```
 superagent -u username:password localhost:3000
 ```
+superagent-cli can read json data from a file using the -f parameter.
+```
+superagent example.com/test post -f request_body.json
+```
