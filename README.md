@@ -17,8 +17,10 @@ superagent <url> <rest method(get|post|put|patch|delete)> <json data>
 superagent www.google.com
 superagent www.google.com get
 superagent localhost:3000 post '{"hello":"world"}'
-superagent localhost:3000 post {hello: 'world'}
+superagent localhost:3000 post {hello: \'world\'}
 ```
+*Note: if using javascript literal notation (instead of fully qualified JSON) all
+quotes around string must be escaped ex: `{hello: 'world'}` must actually be `hello: \'world\'`*
 
 superagent-cli can also add basic HTTP Auth to any request with
 with -u username:password
