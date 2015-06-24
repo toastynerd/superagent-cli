@@ -22,7 +22,7 @@ describe('parser', function() {
   });
 
   it('should parse object literals, not just strict json', function() {
-    var args = ['http://google.com', 'post', '{hello:', 'world}']; //command line args of {hello: 'world'}
+    var args = ['http://google.com', 'post', '{hello:', '"world"}']; //command line args of {hello: 'world'}
     var result = parser.parse(args);
     expect(result.data).to.be.ok;
     expect(result.data.hello).to.eql('world');
@@ -53,14 +53,14 @@ describe('parser', function() {
   });
 
   it('should be able to send properties with periods in them', function() {
-    var args = ['http://google.com', 'post', '{hello: ', 'world.com}'];
+    var args = ['http://google.com', 'post', '{hello: ', '"world.com"}'];
     var result = parser.parse(args);
     expect(result.data).to.be.ok;
     expect(result.data.hello).to.eql('world.com');
   });
 
   it('should be able to send strings with spaces in them', function(){
-    var args = ['http://google.com', 'post', '{hello: ', 'this is dog}'];
+    var args = ['http://google.com', 'post', '{hello: ', '"this is dog"}'];
     var result = parser.parse(args);
     expect(result.data).to.be.ok;
     expect(result.data.hello).to.eql('this is dog');

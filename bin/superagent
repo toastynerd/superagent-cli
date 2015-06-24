@@ -12,7 +12,10 @@ if (request.help) {
   console.log('superagent www.google.com');
   console.log('superagent www.google.com get');
   console.log('superagent localhost:3000 post \'{"hello":"world"}\'');
-  console.log('superagent localhost:3000 post {hello: \'world\'}');
+  console.log('superagent localhost:3000 post {hello: \\\'world\\\'}');
+  console.log("Note: if using javascript literal notation (instead of fully qualified JSON)");
+  console.log("you must escape all quotes around string");
+  console.log("ex: {hello: 'world'} must be {hello: \\\'world\\\'}");
   console.log('flags: ');
   console.log('-d, -v or --detail, --verbose display all information from response');
   console.log('-h or --help display this message');
