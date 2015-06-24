@@ -20,7 +20,9 @@ superagent localhost:3000 post '{"hello":"world"}'
 superagent localhost:3000 post {hello: \'world\'}
 ```
 *Note: if using javascript literal notation (instead of fully qualified JSON) all
-quotes around string must be escaped ex: `{hello: 'world'}` must actually be `hello: \'world\'`*
+quotes around string must be escaped 
+ex: `{hello: 'world'}` must actually be `hello: \'world\'`
+or use two sets of quotes `{hello: "'super world'"}` which will keep white space the same*
 
 superagent-cli can also add basic HTTP Auth to any request with
 with -u username:password
