@@ -26,5 +26,9 @@ app.delete('/', function(req, res) {
   res.send('delete okay');
 });
 
+app.get('/headers', function(req, res) {
+  res.json(req.headers);
+});
+
 var server = http.createServer(app);
 server.listen(3000);
