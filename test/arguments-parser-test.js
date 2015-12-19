@@ -85,6 +85,23 @@ describe('parser', function() {
     expect(result['detail']).to.be.true;
   });
 
+  it('should be able to set a header in a request', function() {
+    var args = ['http://google.com', 'get', '-H', 'x-example-header: true'];
+    var result = parser.parse(args);
+    expect(typeof result.headers).to.eql('object');
+    expect(result.headers['x-example-header']).to.eql('true');
+    expect(result.headers['x-example-header']).to.not.eql(true);
+  });
+
+  it('should be able to set multiple headers in a request', function() {
+    var args = ['http://google.com', 'get', '-H', 'x-header-1: true, x-header-2: false'];
+    var result = parser.parse(args);
+    expect(result.headers['x-header-1']).to.eql('true');
+    expect(result.headers['x-header-1']).to.not.eql(true);
+    expect(result.headers['x-header-2']).to.eql('false');
+    expect(result.headers['x-header-2']).to.not.eql(false);
+  });
+
   after(function(done) {
     fs.unlink('test_file.json');
     done();

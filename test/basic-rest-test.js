@@ -13,7 +13,7 @@ describe('basic rest requests', function() {
     };
 
     superagentcli(request, function(err, res) {
-      expect(res.text).to.eql('get okay');  
+      expect(res.text).to.eql('get okay');
       done();
     });
   });
@@ -28,7 +28,7 @@ describe('basic rest requests', function() {
     superagentcli(request, function(err,res) {
       expect(res.body.msg).to.eql('post okay');
       done();
-    });	
+    });
   });
 
   it('should be able to make a put request', function(done) {
@@ -44,7 +44,7 @@ describe('basic rest requests', function() {
     });
   });
 
-  it('should be able to make a patch reques', function(done) {
+  it('should be able to make a patch request', function(done) {
     var request = {
       hostname: 'http://localhost:3000',
       method: 'patch',
@@ -67,5 +67,19 @@ describe('basic rest requests', function() {
       expect(res.text).to.eql('delete okay');
       done();
     });
+  });
+
+  it('should be able to make a request with headers', function(done) {
+    var request = {
+      hostname: 'http://localhost:3000/headers',
+      headers: {'x-test-header': 'true'},
+      method: 'get'
+    };
+
+    superagentcli(request, function(err, res) {
+      expect(res.body['x-test-header']).to.eql('true');
+      expect(res.body['x-test-header']).to.not.eql(true);
+      done();
+    })
   });
 });
