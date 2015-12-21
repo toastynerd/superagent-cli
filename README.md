@@ -33,3 +33,7 @@ superagent-cli can read json data from a file using the -f parameter.
 ```
 superagent example.com/test post -f request_body.json
 ```
+superagent-cli can set arbitrary headers with -H
+```
+superagent -H "Accept: text/plain, X-Arbitrary-Header: true" example.com
+```
